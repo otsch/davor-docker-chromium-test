@@ -1,0 +1,12 @@
+version: '3'
+services:
+    php:
+        build:
+            context: ./php
+            args:
+                - PHP_INI_ENVIRONMENT=development
+        shm_size: 2G
+        environment:
+            - APP_ENVIRONMENT=local
+        volumes:
+            - ./app:/var/www/html:cached
